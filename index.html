@@ -1618,6 +1618,63 @@ setTimer(cleanupUnusedElements, <span class="hljs-number">60000</span>, <span cl
   document.addEventListener("DOMContentLoaded", () => {
     hljs.highlightAll();
   });
+
+    // === Code Copy Function for Highlight.js ===
+// Add this after Highlight.js is initialized
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Find all <pre><code> blocks
+  document.querySelectorAll('pre code').forEach((codeBlock) => {
+    // Create the "Copy" button
+    const button = document.createElement('button');
+    button.innerText = 'Copy';
+    button.className = 'copy-btn';
+
+    // Style the button (you can also do this via CSS)
+    button.style.position = 'absolute';
+    button.style.top = '10px';
+    button.style.right = '10px';
+    button.style.padding = '5px 10px';
+    button.style.border = 'none';
+    button.style.borderRadius = '6px';
+    button.style.cursor = 'pointer';
+    button.style.background = '#21262d';
+    button.style.color = '#c9d1d9';
+    button.style.fontSize = '13px';
+
+    // Add hover effect
+    button.addEventListener('mouseenter', () => {
+      button.style.background = '#238636';
+      button.style.color = '#fff';
+    });
+    button.addEventListener('mouseleave', () => {
+      button.style.background = '#21262d';
+      button.style.color = '#c9d1d9';
+    });
+
+    // Copy functionality
+    button.addEventListener('click', async () => {
+      const text = codeBlock.innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        button.innerText = 'Copied!';
+        button.style.background = '#2ea043';
+        setTimeout(() => {
+          button.innerText = 'Copy';
+          button.style.background = '#21262d';
+        }, 2000);
+      } catch (err) {
+        console.error('Copy failed:', err);
+      }
+    });
+
+    // Add <pre> wrapper style to hold the button
+    const pre = codeBlock.parentNode;
+    pre.style.position = 'relative';
+    pre.insertBefore(button, codeBlock);
+  });
+});
+
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/lua.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
