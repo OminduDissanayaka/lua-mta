@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Needs -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎮 Lua Programming සහ MTA:SA Resource Development | Omindu.dev</title>
+
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Learn Lua programming and MTA:SA resource development from scratch. Build, script, and create your own multiplayer game resources with this complete step-by-step course by Omindu.">
+
+  <!-- Meta Keywords -->
+  <meta name="keywords" content="Lua, MTA:SA, MTA SA scripting, resource development, Lua programming, Omindu, MTA server, learn Lua, game scripting, MTA mods">
+
+  <!-- Author -->
+  <meta name="author" content="Omindu Dissanayake">
+
+  <!-- Open Graph (for social media previews) -->
+  <meta property="og:title" content="Mastering Lua & MTA:SA Resource Development">
+  <meta property="og:description" content="Step-by-step guide to learning Lua scripting and creating MTA:SA resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://learn.omindu.dev/lua-with-mtasa">
+  <meta property="og:image" content="https://media.moddb.com/images/downloads/1/144/143423/mtasa.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://media.moddb.com/images/downloads/1/144/143423/mtasa.png" type="image/png">
+  <!-- Highlight.js CSS (choose a theme you like) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+<!-- Highlight.js Core Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+  <h1 id="-lua-programming-mta-sa-resource-development">🎮 Lua Programming සහ MTA:SA Resource Development</h1>
+<hr>
+<h2 id="-">📚 පටුන</h2>
+<h3 id="-part-1-lua-programming-basics-"><strong>Part 1: Lua Programming Basics</strong></h3>
+<ol>
+<li><a href="#1-lua-හඳනවීම">Lua හැඳින්වීම</a></li>
+<li><a href="#2-variables-සහ-data-types">Variables සහ Data Types</a></li>
+<li><a href="#3-operators">Operators</a></li>
+<li><a href="#4-control-structures">Control Structures</a></li>
+<li><a href="#5-functions">Functions</a></li>
+<li><a href="#6-tables">Tables</a></li>
+<li><a href="#7-strings">Strings</a></li>
+<li><a href="#8-loops">Loops</a></li>
+<li><a href="#9-modules">Modules</a></li>
+<li><a href="#10-error-handling">Error Handling</a></li>
+</ol>
+<h3 id="-part-2-mta-sa-resource-development-"><strong>Part 2: MTA:SA Resource Development</strong></h3>
+<ol>
+<li><a href="#11-mtasa-හඳනවීම">MTA:SA හැඳින්වීම</a></li>
+<li><a href="#12-resource-structure">Resource Structure</a></li>
+<li><a href="#13-server-side-scripting">Server-Side Scripting</a></li>
+<li><a href="#14-client-side-scripting">Client-Side Scripting</a></li>
+<li><a href="#15-events-සහ-event-handlers">Events සහ Event Handlers</a></li>
+<li><a href="#16-elements-සහ-data">Elements සහ Data</a></li>
+<li><a href="#17-gui-development">GUI Development</a></li>
+<li><a href="#18-database-integration">Database Integration</a></li>
+<li><a href="#19-advanced-concepts">Advanced Concepts</a></li>
+<li><a href="#20-best-practices">Best Practices</a></li>
+</ol>
+<hr>
+<h2 id="part-1-lua-programming-basics">Part 1: Lua Programming Basics</h2>
+<hr>
+<h3 id="1-lua-">1. Lua හඳින්වීම</h3>
+<h4 id="lua-">Lua කියන්නේ මොකද්ද?</h4>
+<p>Lua යනු සරල, වේගවත්, සහ powerful scripting භාෂාවක්. එය game development, embedded systems, සහ web applications වල බහුලව භාවිතා වෙනවා.</p>
+<h4 id="lua-">Lua වල විශේෂාංග:</h4>
+<ul>
+<li>🚀 <strong>වේගවත්</strong> - ඉතා වේගවත් execution speed එකක්</li>
+<li>📦 <strong>සරල</strong> - ඉගෙන ගන්න ඉතා පහසු</li>
+<li>🔧 <strong>නම්‍යශීලී</strong> - විවිධ වැඩකටයුතු වලට යොදාගන්න පුළුවන්</li>
+<li>🎮 <strong>Game Friendly</strong> - game scripting සඳහා ඉතා සුදුසු</li>
+</ul>
+<h4 id="-lua-program-">පළමු Lua Program එක:</h4>
+<pre><code class="lang-lua">-- මේක comment එකක්
+<span class="hljs-keyword">print</span>(<span class="hljs-string">"Hello, World!"</span>) -- කොන්සෝලය මත <span class="hljs-keyword">output</span> එකක් <span class="hljs-keyword">print</span> කරනවා
+</code></pre>
+<hr>
+<h3 id="2-variables-data-types">2. Variables සහ Data Types</h3>
+<h4 id="variables-">Variables කියන්නේ මොකද්ද?</h4>
+<p>Variable යනු data එකක් store කරන container එකක්. Lua වල variables declare කරන විට type එක specify කරන්න අවශ්‍ය නැහැ.</p>
+<h4 id="variable-types-">Variable Types:</h4>
+<p><strong>1. Local Variables (පෙදෙසික විචල්‍ය)</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-built_in">name</span> = <span class="hljs-string">"Kasun"</span> <span class="hljs-comment">-- local variable එකක්</span>
+<span class="hljs-keyword">local</span> age = <span class="hljs-number">25</span>
+</code></pre>
+<p><strong>2. Global Variables (ගෝලීය විචල්‍ය)</strong></p>
+<pre><code class="lang-lua"><span class="hljs-attr">playerName</span> = <span class="hljs-string">"Nimal"</span> -- global variable එකක්
+<span class="hljs-attr">score</span> = <span class="hljs-number">100</span>
+</code></pre>
+<blockquote>
+<p>⚠️ <strong>වැදගත්:</strong> සෑම විටම <code>local</code> භාවිතා කරන්න, global variables memory leak වලට හේතු වෙන්න පුළුවන්.</p>
+</blockquote>
+<h4 id="data-types-">Data Types (දත්ත වර්ග):</h4>
+<p><strong>1. nil (හිස්)</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> x = <span class="hljs-keyword">nil</span> <span class="hljs-comment">-- අගයක් නැති variable එකක්</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">type</span>(x)) <span class="hljs-comment">-- Output: nil</span>
+</code></pre>
+<p><strong>2. boolean (සත්‍ය/අසත්‍ය)</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> isAlive = <span class="hljs-literal">true</span>
+<span class="hljs-keyword">local</span> isGameOver = <span class="hljs-literal">false</span>
+</code></pre>
+<p><strong>3. number (සංඛ්‍යා)</strong></p>
+<pre><code class="lang-lua"><span class="hljs-built_in">local</span> <span class="hljs-built_in">integer</span>Num = 42
+<span class="hljs-built_in">local</span> <span class="hljs-built_in">float</span>Num = 3.14
+<span class="hljs-built_in">local</span> negative = -100
+</code></pre>
+<p><strong>4. string (පෙළ)</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> singleQuote = <span class="hljs-string">'Hello'</span>
+<span class="hljs-keyword">local</span> doubleQuote = <span class="hljs-string">"World"</span>
+<span class="hljs-keyword">local</span> multiLine = <span class="hljs-string">[[මේක
+multiple line
+string එකක්]]</span>
+</code></pre>
+<p><strong>5. table (වගුව)</strong></p>
+<pre><code class="lang-lua">local <span class="hljs-attr">fruits</span> = {<span class="hljs-string">"amba"</span>, <span class="hljs-string">"puhul"</span>, <span class="hljs-string">"anoda"</span>}
+local <span class="hljs-attr">person</span> = {<span class="hljs-attr">name</span> = <span class="hljs-string">"Kamal"</span>, <span class="hljs-attr">age</span> = <span class="hljs-number">30</span>}
+</code></pre>
+<p><strong>6. function (ක්‍රියාව)</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span><span class="hljs-params">()</span></span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"ආයුබෝවන්!"</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="type-checking-">Type Checking:</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> x = <span class="hljs-number">10</span>
+<span class="hljs-keyword">print</span>(<span class="hljs-built_in">type</span>(x)) -- <span class="hljs-keyword">Output</span>: number
+
+<span class="hljs-keyword">local</span> name = <span class="hljs-string">"Saman"</span>
+<span class="hljs-keyword">print</span>(<span class="hljs-built_in">type</span>(name)) -- <span class="hljs-keyword">Output</span>: <span class="hljs-keyword">string</span>
+</code></pre>
+<hr>
+<h3 id="3-operators">3. Operators</h3>
+<h4 id="arithmetic-operators-">Arithmetic Operators (ගණිතමය ක්‍රියාකරු):</h4>
+<pre><code class="lang-lua">local <span class="hljs-selector-tag">a</span> = <span class="hljs-number">10</span>
+local <span class="hljs-selector-tag">b</span> = <span class="hljs-number">3</span>
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(a + b)</span></span>  -- එකතු කිරීම: <span class="hljs-number">13</span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(a - b)</span></span>  -- අඩු කිරීම: <span class="hljs-number">7</span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(a * b)</span></span>  -- ගුණ කිරීම: <span class="hljs-number">30</span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(a / b)</span></span>  -- බෙදීම: <span class="hljs-number">3.333</span>...
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(a % b)</span></span>  -- Modulo (ඉතිරිය): <span class="hljs-number">1</span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(a ^ b)</span></span>  -- Power (බලය): <span class="hljs-number">1000</span>
+</code></pre>
+<h4 id="relational-operators-">Relational Operators (සාපේක්ෂ ක්‍රියාකරු):</h4>
+<pre><code class="lang-lua">local x = <span class="hljs-number">5</span>
+local y = <span class="hljs-number">10</span>
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(x == y)</span></span>  -- සමාන: false
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(x ~= y)</span></span>  -- සමාන නොවේ: true
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(x &lt; y)</span></span>   -- අඩු: true
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(x &gt; y)</span></span>   -- වැඩි: false
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(x &lt;= y)</span></span>  -- අඩු හෝ සමාන: true
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(x &gt;= y)</span></span>  -- වැඩි හෝ සමාන: false
+</code></pre>
+<h4 id="logical-operators-">Logical Operators (තාර්කික ක්‍රියාකරු):</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> a = <span class="hljs-literal">true</span>
+<span class="hljs-keyword">local</span> b = <span class="hljs-literal">false</span>
+
+<span class="hljs-built_in">print</span>(a <span class="hljs-literal">and</span> b)  -- <span class="hljs-literal">AND</span>: <span class="hljs-literal">false</span>
+<span class="hljs-built_in">print</span>(a <span class="hljs-literal">or</span> b)   -- <span class="hljs-literal">OR</span>: <span class="hljs-literal">true</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-keyword">not</span> a)    -- <span class="hljs-keyword">NOT</span>: <span class="hljs-literal">false</span>
+</code></pre>
+<h4 id="string-concatenation-">String Concatenation (පෙළ එකතු කිරීම):</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> firstName = <span class="hljs-string">"Nimal"</span>
+<span class="hljs-keyword">local</span> lastName = <span class="hljs-string">"Silva"</span>
+<span class="hljs-keyword">local</span> fullName = firstName .. <span class="hljs-string">" "</span> .. lastName
+<span class="hljs-keyword">print</span>(fullName) -- <span class="hljs-keyword">Output</span>: Nimal Silva
+</code></pre>
+<hr>
+<h3 id="4-control-structures">4. Control Structures</h3>
+<h4 id="if-else-statements-">If-Else Statements:</h4>
+<p><strong>මූලික if statement:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> age = <span class="hljs-number">18</span>
+
+<span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">18</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"ඔබ වැඩිහිටියෙක්"</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><strong>If-Else:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> score = <span class="hljs-number">45</span>
+
+<span class="hljs-keyword">if</span> score &gt;= <span class="hljs-number">50</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Pass"</span>)
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Fail"</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><strong>If-Elseif-Else:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> marks = <span class="hljs-number">75</span>
+
+<span class="hljs-keyword">if</span> marks &gt;= <span class="hljs-number">75</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"A Grade"</span>)
+<span class="hljs-keyword">elseif</span> marks &gt;= <span class="hljs-number">65</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"B Grade"</span>)
+<span class="hljs-keyword">elseif</span> marks &gt;= <span class="hljs-number">55</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"C Grade"</span>)
+<span class="hljs-keyword">elseif</span> marks &gt;= <span class="hljs-number">35</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"S Grade"</span>)
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Fail"</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><strong>Nested If (කැදැලි if):</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> age = <span class="hljs-number">20</span>
+<span class="hljs-keyword">local</span> hasLicense = <span class="hljs-keyword">true</span>
+
+<span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">18</span> <span class="hljs-keyword">then</span>
+    <span class="hljs-keyword">if</span> hasLicense <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"ඔබට drive කරන්න පුළුවන්"</span>)
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"පළමුව license එකක් ගන්න"</span>)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"ඔබ තවමත් අඩුයි"</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<hr>
+<h3 id="5-functions">5. Functions</h3>
+<h4 id="functions-">Functions කියන්නේ මොකද්ද?</h4>
+<p>Function එකක් යනු නිශ්චිත කාර්යයක් කරන code block එකක්. Functions භාවිතා කරන්නේ code එක reuse කරන්න සහ organize කරන්න.</p>
+<h4 id="basic-function-">Basic Function:</h4>
+<pre><code class="lang-lua"><span class="hljs-function"><span class="hljs-keyword">function</span></span> greet()
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"ආයුබෝවන්!"</span>)
+<span class="hljs-keyword">end</span>
+
+greet() -- <span class="hljs-function"><span class="hljs-keyword">function</span></span> එක <span class="hljs-keyword">call</span> කරනවා
+</code></pre>
+<h4 id="parameters-function-">Parameters සමඟ Function:</h4>
+<pre><code class="lang-lua"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span><span class="hljs-params">(name)</span></span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"ආයුබෝවන් "</span> .. name .. <span class="hljs-string">"!"</span>)
+<span class="hljs-keyword">end</span>
+
+greet(<span class="hljs-string">"කමල්"</span>)  <span class="hljs-comment">-- Output: ආයුබෝවන් කමල්!</span>
+greet(<span class="hljs-string">"නිමල්"</span>)  <span class="hljs-comment">-- Output: ආයුබෝවන් නිමල්!</span>
+</code></pre>
+<h4 id="multiple-parameters-">Multiple Parameters:</h4>
+<pre><code class="lang-lua"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span><span class="hljs-params">(a, b)</span></span>
+    <span class="hljs-keyword">return</span> a + b
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">local</span> result = add(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)
+<span class="hljs-built_in">print</span>(result) <span class="hljs-comment">-- Output: 8</span>
+</code></pre>
+<h4 id="multiple-return-values-">Multiple Return Values:</h4>
+<pre><code class="lang-lua"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">calculate</span>(<span class="hljs-title">a</span>, <span class="hljs-title">b</span>)</span>
+    <span class="hljs-built_in">local</span> <span class="hljs-built_in">sum</span> = <span class="hljs-keyword">a</span> + b
+    <span class="hljs-built_in">local</span> product = <span class="hljs-keyword">a</span> * b
+    <span class="hljs-literal">return</span> <span class="hljs-built_in">sum</span>, product
+<span class="hljs-function"><span class="hljs-keyword">end</span>
+
+<span class="hljs-title">local</span> <span class="hljs-title">s</span>, <span class="hljs-title">p</span> = <span class="hljs-title">calculate</span>(<span class="hljs-title">4</span>, <span class="hljs-title">5</span>)</span>
+print(<span class="hljs-string">"එකතුව: "</span> .. s)      <span class="hljs-comment">-- Output: එකතුව: 9</span>
+print(<span class="hljs-string">"ගුණිතය: "</span> .. p)    <span class="hljs-comment">-- Output: ගුණිතය: 20</span>
+</code></pre>
+<h4 id="local-functions-">Local Functions:</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">privateFunction</span><span class="hljs-params">()</span>
+    <span class="hljs-title">print</span><span class="hljs-params">("මේක <span class="hljs-keyword">local</span> <span class="hljs-keyword">function</span> එකක්")</span>
+<span class="hljs-title">end</span>
+
+<span class="hljs-title">privateFunction</span><span class="hljs-params">()</span></span>
+</code></pre>
+<h4 id="anonymous-functions-">Anonymous Functions (නාමරහිත ක්‍රියා):</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> square = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(x)</span></span>
+    <span class="hljs-keyword">return</span> x * x
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-built_in">print</span>(square(<span class="hljs-number">5</span>)) <span class="hljs-comment">-- Output: 25</span>
+</code></pre>
+<h4 id="default-parameters-">Default Parameters:</h4>
+<pre><code class="lang-lua"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span><span class="hljs-params">(name, greeting)</span></span>
+    greeting = greeting <span class="hljs-keyword">or</span> <span class="hljs-string">"ආයුබෝවන්"</span> <span class="hljs-comment">-- default value</span>
+    <span class="hljs-built_in">print</span>(greeting .. <span class="hljs-string">" "</span> .. name)
+<span class="hljs-keyword">end</span>
+
+greet(<span class="hljs-string">"කමල්"</span>)                    <span class="hljs-comment">-- Output: ආයුබෝවන් කමල්</span>
+greet(<span class="hljs-string">"නිමල්"</span>, <span class="hljs-string">"සුබ දවසක්"</span>)     <span class="hljs-comment">-- Output: සුබ දවසක් නිමල්</span>
+</code></pre>
+<hr>
+<h3 id="6-tables">6. Tables</h3>
+<h4 id="tables-">Tables කියන්නේ මොකද්ද?</h4>
+<p>Table එකක් යනු Lua වල ඇති එකම data structure එක. Arrays, dictionaries, objects හැමදේම tables භාවිතයෙන් හදන්න පුළුවන්.</p>
+<h4 id="array-style-tables-">Array-Style Tables (අනුක්‍රමික වගු):</h4>
+<pre><code class="lang-lua">local fruits = {<span class="hljs-string">"amba"</span>, <span class="hljs-string">"puhul"</span>, <span class="hljs-string">"anoda"</span>, <span class="hljs-string">"දොඩම්"</span>}
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(fruits[<span class="hljs-number">1</span>])</span></span>  -- Output: amba (Lua වල index <span class="hljs-number">1</span> සිට පටන් ගන්නවා)
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(fruits[<span class="hljs-number">3</span>])</span></span>  -- Output: anoda
+
+-- Table එකේ length එක
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(#fruits)</span></span>    -- Output: <span class="hljs-number">4</span>
+</code></pre>
+<h4 id="dictionary-style-tables-">Dictionary-Style Tables (ශබ්දකෝෂ වගු):</h4>
+<pre><code class="lang-lua">local person = {
+    name = <span class="hljs-string">"කමල්"</span>,
+    age = <span class="hljs-number">25</span>,
+    city = <span class="hljs-string">"කොළඹ"</span>
+}
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(person.name)</span></span>    -- Output: කමල්
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(person[<span class="hljs-string">"age"</span>])</span></span>  -- Output: <span class="hljs-number">25</span>
+</code></pre>
+<h4 id="nested-tables-">Nested Tables (කැදැලි වගු):</h4>
+<pre><code class="lang-lua">local <span class="hljs-attr">school</span> = {
+    <span class="hljs-attr">name</span> = <span class="hljs-string">"රාජකීය විද්‍යාලය"</span>,
+    <span class="hljs-attr">students</span> = {
+        {<span class="hljs-attr">name</span> = <span class="hljs-string">"කමල්"</span>, <span class="hljs-attr">age</span> = <span class="hljs-number">15</span>},
+        {<span class="hljs-attr">name</span> = <span class="hljs-string">"නිමල්"</span>, <span class="hljs-attr">age</span> = <span class="hljs-number">16</span>},
+        {<span class="hljs-attr">name</span> = <span class="hljs-string">"සුනිල්"</span>, <span class="hljs-attr">age</span> = <span class="hljs-number">15</span>}
+    }
+}
+
+print(school.students[<span class="hljs-number">1</span>].name)  -- Output: කමල්
+</code></pre>
+<h4 id="table-functions-">Table Functions (වගු ක්‍රියා):</h4>
+<p><strong>table.insert() - අයිතම එකතු කරනවා</strong></p>
+<pre><code class="lang-lua">local colors = {<span class="hljs-string">"red"</span>, <span class="hljs-string">"green"</span>}
+<span class="hljs-selector-tag">table</span>.insert(colors, <span class="hljs-string">"blue"</span>)      -- අන්තයට එකතු කරනවා
+<span class="hljs-selector-tag">table</span>.insert(colors, <span class="hljs-number">2</span>, <span class="hljs-string">"yellow"</span>) -- <span class="hljs-attribute">position</span> <span class="hljs-number">2</span> වලට එකතු කරනවා
+
+-- colors = {<span class="hljs-string">"red"</span>, <span class="hljs-string">"yellow"</span>, <span class="hljs-string">"green"</span>, <span class="hljs-string">"blue"</span>}
+</code></pre>
+<p><strong>table.remove() - අයිතම ඉවත් කරනවා</strong></p>
+<pre><code class="lang-lua">local numbers = {<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>}
+<span class="hljs-keyword">table</span>.remove(numbers, 2)  <span class="hljs-comment">-- index 2</span> ඉවත් කරනවා
+<span class="hljs-keyword">table</span>.remove(numbers)     <span class="hljs-comment">--</span> අන්තිම<span class="hljs-comment"> element</span> එක ඉවත් කරනවා
+</code></pre>
+<p><strong>table.concat() - පෙළක් හදනවා</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-built_in">words</span> = {<span class="hljs-string">"Hello"</span>, <span class="hljs-string">"World"</span>, <span class="hljs-string">"Lua"</span>}
+<span class="hljs-keyword">local</span> sentence = table.concat(<span class="hljs-built_in">words</span>, <span class="hljs-string">" "</span>)
+print(sentence)  <span class="hljs-comment">-- Output: Hello World Lua</span>
+</code></pre>
+<p><strong>table.sort() - පිළිවෙල කරනවා</strong></p>
+<pre><code class="lang-lua">local numbers = {<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>}
+table.sort(numbers)
+-- numbers = {<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>}
+</code></pre>
+<h4 id="iterating-tables-">Iterating Tables (වගු පුනරාවර්තනය):</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> fruits = {<span class="hljs-string">"amba"</span>, <span class="hljs-string">"puhul"</span>, <span class="hljs-string">"anoda"</span>}
+
+<span class="hljs-comment">-- ipairs භාවිතයෙන් (arrays සඳහා)</span>
+<span class="hljs-keyword">for</span> index, fruit <span class="hljs-keyword">in</span> <span class="hljs-built_in">ipairs</span>(fruits) <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">print</span>(index, fruit)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- pairs භාවිතයෙන් (dictionaries සඳහා)</span>
+<span class="hljs-keyword">local</span> person = {name = <span class="hljs-string">"කමල්"</span>, age = <span class="hljs-number">25</span>}
+<span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> <span class="hljs-built_in">pairs</span>(person) <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">print</span>(key, value)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<hr>
+<h3 id="7-strings">7. Strings</h3>
+<h4 id="string-operations-">String Operations:</h4>
+<p><strong>String Length (දිග):</strong></p>
+<pre><code class="lang-lua"><span class="hljs-built_in">local</span> <span class="hljs-keyword">text</span> = <span class="hljs-string">"ආයුබෝවන්"</span>
+print(<span class="hljs-comment">#text)              -- string එකේ length එක</span>
+print(<span class="hljs-keyword">string</span>.<span class="hljs-built_in">len</span>(<span class="hljs-keyword">text</span>))   <span class="hljs-comment">-- alternate method</span>
+</code></pre>
+<p><strong>String Concatenation (එකතු කිරීම):</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-keyword">first</span> = <span class="hljs-string">"Hello"</span>
+<span class="hljs-keyword">local</span> <span class="hljs-keyword">second</span> = <span class="hljs-string">"World"</span>
+<span class="hljs-keyword">local</span> combined = <span class="hljs-keyword">first</span> .. <span class="hljs-string">" "</span> .. <span class="hljs-keyword">second</span>
+print(combined)  <span class="hljs-comment">-- Output: Hello World</span>
+</code></pre>
+<p><strong>Uppercase/Lowercase:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-built_in">local</span> <span class="hljs-keyword">text</span> = <span class="hljs-string">"Hello Lua"</span>
+print(<span class="hljs-keyword">string</span>.<span class="hljs-built_in">upper</span>(<span class="hljs-keyword">text</span>))  <span class="hljs-comment">-- Output: HELLO LUA</span>
+print(<span class="hljs-keyword">string</span>.<span class="hljs-built_in">lower</span>(<span class="hljs-keyword">text</span>))  <span class="hljs-comment">-- Output: hello lua</span>
+</code></pre>
+<p><strong>Substring (උප පෙළ):</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-built_in">text</span> = <span class="hljs-string">"Hello World"</span>
+print(<span class="hljs-built_in">string</span>.sub(<span class="hljs-built_in">text</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>))   <span class="hljs-comment">-- Output: Hello</span>
+print(<span class="hljs-built_in">string</span>.sub(<span class="hljs-built_in">text</span>, <span class="hljs-number">7</span>))      <span class="hljs-comment">-- Output: World</span>
+</code></pre>
+<p><strong>Find and Replace:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-built_in">local</span> <span class="hljs-keyword">text</span> = <span class="hljs-string">"I love Lua programming"</span>
+
+<span class="hljs-comment">-- Find</span>
+<span class="hljs-built_in">local</span> <span class="hljs-built_in">start</span>, finish = <span class="hljs-keyword">string</span>.find(<span class="hljs-keyword">text</span>, <span class="hljs-string">"Lua"</span>)
+print(<span class="hljs-built_in">start</span>, finish)  <span class="hljs-comment">-- Output: 8 10</span>
+
+<span class="hljs-comment">-- Replace</span>
+<span class="hljs-built_in">local</span> newText = <span class="hljs-keyword">string</span>.gsub(<span class="hljs-keyword">text</span>, <span class="hljs-string">"Lua"</span>, <span class="hljs-string">"Python"</span>)
+print(newText)  <span class="hljs-comment">-- Output: I love Python programming</span>
+</code></pre>
+<p><strong>String Formatting:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-built_in">name</span> = <span class="hljs-string">"කමල්"</span>
+<span class="hljs-keyword">local</span> age = <span class="hljs-number">25</span>
+<span class="hljs-keyword">local</span> formatted = <span class="hljs-built_in">string</span>.format(<span class="hljs-string">"නම: %s, වයස: %d"</span>, <span class="hljs-built_in">name</span>, age)
+print(formatted)  <span class="hljs-comment">-- Output: නම: කමල්, වයස: 25</span>
+</code></pre>
+<p><strong>Repeat:</strong></p>
+<pre><code class="lang-lua">local <span class="hljs-keyword">star</span> = <span class="hljs-string">"*"</span>
+<span class="hljs-keyword">print</span>(<span class="hljs-built_in">string</span>.rep(<span class="hljs-keyword">star</span>, <span class="hljs-number">5</span>))  -- Outpu<span class="hljs-variable">t:</span> *****
+</code></pre>
+<p><strong>Reverse:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-built_in">text</span> = <span class="hljs-string">"Lua"</span>
+print(<span class="hljs-built_in">string</span>.<span class="hljs-built_in">reverse</span>(<span class="hljs-built_in">text</span>))  <span class="hljs-comment">-- Output: auL</span>
+</code></pre>
+<hr>
+<h3 id="8-loops">8. Loops</h3>
+<h4 id="for-loop-">For Loop:</h4>
+<p><strong>Numeric For Loop:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- 1 සිට 5 දක්වා</span>
+<span class="hljs-keyword">for</span> i = <span class="hljs-number">1</span>, <span class="hljs-number">5</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">print</span>(i)
+<span class="hljs-keyword">end</span>
+<span class="hljs-comment">-- Output: 1 2 3 4 5</span>
+
+<span class="hljs-comment">-- Step සමඟ</span>
+<span class="hljs-keyword">for</span> i = <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">2</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">print</span>(i)
+<span class="hljs-keyword">end</span>
+<span class="hljs-comment">-- Output: 0 2 4 6 8 10</span>
+
+<span class="hljs-comment">-- Reverse</span>
+<span class="hljs-keyword">for</span> i = <span class="hljs-number">5</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">print</span>(i)
+<span class="hljs-keyword">end</span>
+<span class="hljs-comment">-- Output: 5 4 3 2 1</span>
+</code></pre>
+<p><strong>Generic For Loop (Tables සඳහා):</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> fruits = {<span class="hljs-string">"amba"</span>, <span class="hljs-string">"puhul"</span>, <span class="hljs-string">"anoda"</span>}
+
+<span class="hljs-keyword">for</span> index, fruit <span class="hljs-keyword">in</span> <span class="hljs-built_in">ipairs</span>(fruits) <span class="hljs-keyword">do</span>
+    <span class="hljs-built_in">print</span>(index .. <span class="hljs-string">": "</span> .. fruit)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="while-loop-">While Loop:</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-keyword">count</span> = 1
+
+<span class="hljs-keyword">while</span> <span class="hljs-keyword">count</span> &lt;= 5 <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">print</span>(<span class="hljs-string">"Count: "</span> .. <span class="hljs-keyword">count</span>)
+    <span class="hljs-keyword">count</span> = <span class="hljs-keyword">count</span> + 1
+end
+</code></pre>
+<h4 id="repeat-until-loop-">Repeat-Until Loop:</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> x = <span class="hljs-number">1</span>
+
+<span class="hljs-keyword">repeat</span>
+    <span class="hljs-built_in">print</span>(x)
+    x = x + <span class="hljs-number">1</span>
+<span class="hljs-keyword">until</span> x &gt; <span class="hljs-number">5</span>
+</code></pre>
+<h4 id="break-and-continue-">Break and Continue:</h4>
+<pre><code class="lang-lua">-- <span class="hljs-keyword">Break</span> භාවිතය
+<span class="hljs-keyword">for</span> i = <span class="hljs-number">1</span>, <span class="hljs-number">10</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">if</span> i == <span class="hljs-number">5</span> then
+        <span class="hljs-keyword">break</span>  -- <span class="hljs-keyword">loop</span> එක නතර කරනවා
+    <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">print</span>(i)
+<span class="hljs-keyword">end</span>
+
+-- <span class="hljs-keyword">Continue</span> effect එක (Lua වල <span class="hljs-keyword">continue</span> නැහැ)
+<span class="hljs-keyword">for</span> i = <span class="hljs-number">1</span>, <span class="hljs-number">10</span> <span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span> then
+        <span class="hljs-keyword">goto</span> <span class="hljs-keyword">continue</span>  -- skip කරනවා
+    <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">print</span>(i)
+    ::<span class="hljs-keyword">continue</span>::
+<span class="hljs-keyword">end</span>
+</code></pre>
+<hr>
+<h3 id="9-modules">9. Modules</h3>
+<h4 id="modules-">Modules කියන්නේ මොකද්ද?</h4>
+<p>Module එකක් යනු reusable code එකක් තියෙන separate file එකක්.</p>
+<h4 id="module-">Module එකක් හදන්නේ කොහොමද:</h4>
+<p><strong>mymodule.lua:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> M = {}  <span class="hljs-comment">-- Module table එක</span>
+
+M.version = <span class="hljs-string">"1.0"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">M.greet</span><span class="hljs-params">(name)</span></span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"ආයුබෝවන් "</span> .. name
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">M.add</span><span class="hljs-params">(a, b)</span></span>
+    <span class="hljs-keyword">return</span> a + b
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">return</span> M
+</code></pre>
+<h4 id="module-">Module එකක් භාවිතා කරන්නේ කොහොමද:</h4>
+<pre><code class="lang-lua">local mymodule = require(<span class="hljs-string">"mymodule"</span>)
+
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(mymodule.version)</span></span>           -- Output: <span class="hljs-number">1.0</span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(mymodule.greet(<span class="hljs-string">"කමල්"</span>)</span></span>)     -- Output: ආයුබෝවන් කමල්
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(mymodule.add(<span class="hljs-number">5</span>, <span class="hljs-number">3</span>)</span></span>)         -- Output: <span class="hljs-number">8</span>
+</code></pre>
+<hr>
+<h3 id="10-error-handling">10. Error Handling</h3>
+<h4 id="pcall-protected-call-">pcall (Protected Call):</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">riskyFunction</span><span class="hljs-params">()</span></span>
+    <span class="hljs-built_in">error</span>(<span class="hljs-string">"මෙහි දෝෂයක් සිදු විය!"</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">local</span> success, errorMessage = <span class="hljs-built_in">pcall</span>(riskyFunction)
+
+<span class="hljs-keyword">if</span> success <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"සාර්ථකයි!"</span>)
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"දෝෂය: "</span> .. errorMessage)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="xpcall-extended-protected-call-">xpcall (Extended Protected Call):</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">errorHandler</span><span class="hljs-params">(err)</span></span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"දෝෂ හසුරුවන්නා: "</span> .. err
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">local</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">riskyFunction</span><span class="hljs-params">()</span></span>
+    <span class="hljs-keyword">local</span> x = <span class="hljs-keyword">nil</span>
+    <span class="hljs-keyword">return</span> x.value  <span class="hljs-comment">-- මෙහි error එකක් ඇති වෙනවා</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">local</span> success, result = <span class="hljs-built_in">xpcall</span>(riskyFunction, errorHandler)
+<span class="hljs-built_in">print</span>(result)
+</code></pre>
+<h4 id="assert-">assert භාවිතය:</h4>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">divide</span><span class="hljs-params">(a, b)</span></span>
+    <span class="hljs-built_in">assert</span>(b ~= <span class="hljs-number">0</span>, <span class="hljs-string">"ශුන්‍යයෙන් බෙදිය නොහැක!"</span>)
+    <span class="hljs-keyword">return</span> a / b
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-built_in">print</span>(divide(<span class="hljs-number">10</span>, <span class="hljs-number">2</span>))  <span class="hljs-comment">-- Output: 5</span>
+<span class="hljs-comment">-- print(divide(10, 0))  -- Error: ශුන්‍යයෙන් බෙදිය නොහැක!</span>
+</code></pre>
+<hr>
+<h2 id="part-2-mta-sa-resource-development">Part 2: MTA:SA Resource Development</h2>
+<hr>
+<h3 id="11-mta-sa-">11. MTA:SA හඳින්වීම</h3>
+<h4 id="mta-sa-">MTA:SA කියන්නේ මොකද්ද?</h4>
+<p>Multi Theft Auto: San Andreas (MTA:SA) යනු GTA San Andreas game එක සඳහා multiplayer mod එකක්. මෙහි Lua භාවිතයෙන් custom game modes හදන්න පුළුවන්.</p>
+<h4 id="mta-sa-">MTA:SA වල ප්‍රධාන සංකල්ප:</h4>
+<p><strong>1. Server සහ Client:</strong></p>
+<ul>
+<li><strong>Server-Side</strong>: සර්වරයේ run වෙන scripts (ක්‍රීඩකයින්ට බලන්න බැහැ)</li>
+<li><strong>Client-Side</strong>: ක්‍රීඩකයාගේ computer එකේ run වෙන scripts</li>
+</ul>
+<p><strong>2. Resources:</strong>
+Resource එකක් යනු game mode එකක්, script එකක්, හෝ feature එකක්. එක එක resource වලට තමන්ගේම folder එකක් තියෙනවා.</p>
+<p><strong>3. Elements:</strong>
+MTA වල හැම දෙයක්ම (players, vehicles, objects) &quot;elements&quot; ලෙස හැඳින්වෙනවා.</p>
+<hr>
+<h3 id="12-resource-structure">12. Resource Structure</h3>
+<h4 id="resource-folder-structure-">Resource Folder Structure:</h4>
+<pre><code>myresource/
+│
+├── meta<span class="hljs-selector-class">.xml</span>          (Resource configuration file)
+├── server<span class="hljs-selector-class">.lua</span>        (Server-side script)
+├── client<span class="hljs-selector-class">.lua</span>        (Client-side script)
+├── shared<span class="hljs-selector-class">.lua</span>        (දෙපැත්තටම access වෙන script)
+│
+├── images/           (Images folder)
+│   └── logo<span class="hljs-selector-class">.png</span>
+│
+├── sounds/           (Sounds folder)
+│   └── notification<span class="hljs-selector-class">.mp3</span>
+│
+└── data/            (Data folder)
+    └── config.lua
+</code></pre><h4 id="meta-xml-file-">meta.xml File:</h4>
+<p><strong>මූලික meta.xml:</strong></p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">info</span> <span class="hljs-attr">author</span>=<span class="hljs-string">"YourName"</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"1.0"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"My First Resource"</span> <span class="hljs-attr">description</span>=<span class="hljs-string">"මගේ පළමු MTA resource එක"</span> /&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Server-side scripts --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"server.lua"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"server"</span> /&gt;</span><span class="handlebars"><span class="xml">
+
+    <span class="hljs-comment">&lt;!-- Client-side scripts --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"client.lua"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"client"</span> /&gt;</span><span class="handlebars"><span class="xml">
+
+    <span class="hljs-comment">&lt;!-- Shared scripts --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"shared.lua"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"shared"</span> /&gt;</span><span class="handlebars"><span class="xml">
+
+    <span class="hljs-comment">&lt;!-- Files --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">file</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/logo.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">file</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"sounds/notification.mp3"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></span></span></span></span></span></span>
+</code></pre>
+<p><strong>Advanced meta.xml:</strong></p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">meta</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">info</span> <span class="hljs-attr">author</span>=<span class="hljs-string">"YourName"</span> <span class="hljs-attr">version</span>=<span class="hljs-string">"2.0"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"gamemode"</span> /&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Scripts --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"server/main.lua"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"server"</span> /&gt;</span><span class="handlebars"><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"server/commands.lua"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"server"</span> /&gt;</span><span class="handlebars"><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"client/gui.lua"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"client"</span> /&gt;</span><span class="handlebars"><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"shared/config.lua"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"shared"</span> /&gt;</span><span class="handlebars"><span class="xml">
+
+    <span class="hljs-comment">&lt;!-- Files --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">file</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/*.png"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">file</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"sounds/*.mp3"</span> /&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- OOP භාවිතය --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">oop</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">oop</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Exports --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">export</span> <span class="hljs-attr">function</span>=<span class="hljs-string">"getPlayerMoney"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"server"</span> /&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Settings --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">settings</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">setting</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"*maxPlayers"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"32"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">setting</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"*gamemodeText"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Roleplay"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">settings</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">meta</span>&gt;</span></span></span></span></span></span></span></span></span>
+</code></pre>
+<hr>
+<h3 id="13-server-side-scripting">13. Server-Side Scripting</h3>
+<h4 id="server-side-script-">Server-Side Script එකක් ලියන්නේ කොහොමද:</h4>
+<p><strong>server.lua:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Server start වෙද්දී execute වෙන code</span>
+addEventHandler(<span class="hljs-string">"onResourceStart"</span>, resourceRoot,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        outputDebugString(<span class="hljs-string">"Resource එක ආරම්භ විය!"</span>)
+    <span class="hljs-keyword">end</span>
+)
+
+<span class="hljs-comment">-- Player join වෙද්දී</span>
+addEventHandler(<span class="hljs-string">"onPlayerJoin"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        <span class="hljs-keyword">local</span> playerName = getPlayerName(source)
+        outputChatBox(<span class="hljs-string">"ආයුබෝවන් "</span> .. playerName .. <span class="hljs-string">"!"</span>, root, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">end</span>
+)
+
+<span class="hljs-comment">-- Player quit වෙද්දී</span>
+addEventHandler(<span class="hljs-string">"onPlayerQuit"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(quitType)</span></span>
+        <span class="hljs-keyword">local</span> playerName = getPlayerName(source)
+        outputChatBox(playerName .. <span class="hljs-string">" ක්‍රීඩාවෙන් ඉවත් විය. ("</span> .. quitType .. <span class="hljs-string">")"</span>, root, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<h4 id="commands-">Commands හදන්නේ කොහොමද:</h4>
+<p><strong>Simple Command:</strong></p>
+<pre><code class="lang-lua">addCommandHandler(<span class="hljs-string">"heal"</span>,
+    function(<span class="hljs-name">player</span>)
+        setElementHealth(<span class="hljs-name">player</span>, <span class="hljs-number">100</span>)
+        outputChatBox(<span class="hljs-string">"ඔබගේ සෞඛ්‍යය යථා තත්වයට පත් විය!"</span>, player, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+    end
+)
+</code></pre>
+<p><strong>Command with Arguments:</strong></p>
+<pre><code class="lang-lua">addCommandHandler(<span class="hljs-string">"setmoney"</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(player, cmd, amount)</span></span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> amount <span class="hljs-keyword">then</span>
+            outputChatBox(<span class="hljs-string">"භාවිතය: /setmoney &lt;amount&gt;"</span>, player, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">end</span>
+
+        amount = <span class="hljs-built_in">tonumber</span>(amount)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> amount <span class="hljs-keyword">then</span>
+            outputChatBox(<span class="hljs-string">"වලංගු මුදලක් ඇතුළත් කරන්න!"</span>, player, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">end</span>
+
+        setPlayerMoney(player, amount)
+        outputChatBox(<span class="hljs-string">"ඔබගේ මුදල් "</span> .. amount .. <span class="hljs-string">" දක්වා සකසා ඇත!"</span>, player, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<p><strong>Admin Command:</strong></p>
+<pre><code class="lang-lua">addCommandHandler(<span class="hljs-string">"kick"</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(player, cmd, targetName, ...)</span></span>
+        <span class="hljs-comment">-- Admin පරීක්ෂා කිරීම</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isObjectInACLGroup(<span class="hljs-string">"user."</span> .. getAccountName(getPlayerAccount(player)), aclGetGroup(<span class="hljs-string">"Admin"</span>)) <span class="hljs-keyword">then</span>
+            outputChatBox(<span class="hljs-string">"ඔබට අවසරයක් නැත!"</span>, player, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">end</span>
+
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> targetName <span class="hljs-keyword">then</span>
+            outputChatBox(<span class="hljs-string">"භාවිතය: /kick &lt;player&gt; &lt;reason&gt;"</span>, player, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">end</span>
+
+        <span class="hljs-keyword">local</span> target = getPlayerFromName(targetName)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> target <span class="hljs-keyword">then</span>
+            outputChatBox(<span class="hljs-string">"ක්‍රීඩකයා සොයාගත නොහැක!"</span>, player, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">return</span>
+        <span class="hljs-keyword">end</span>
+
+        <span class="hljs-keyword">local</span> reason = <span class="hljs-built_in">table</span>.concat({...}, <span class="hljs-string">" "</span>) <span class="hljs-keyword">or</span> <span class="hljs-string">"හේතුවක් දක්වා නැත"</span>
+
+        outputChatBox(getPlayerName(target) .. <span class="hljs-string">" ක්‍රීඩාවෙන් දමා ඇත. හේතුව: "</span> .. reason, root, <span class="hljs-number">255</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>)
+        kickPlayer(target, player, reason)
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<h4 id="player-data-handling-">Player Data Handling:</h4>
+<p><strong>Element Data භාවිතය:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Data set කිරීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">givePlayerCash</span><span class="hljs-params">(player, amount)</span></span>
+    <span class="hljs-keyword">local</span> currentMoney = getElementData(player, <span class="hljs-string">"money"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+    setElementData(player, <span class="hljs-string">"money"</span>, currentMoney + amount)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Data ලබා ගැනීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPlayerCash</span><span class="hljs-params">(player)</span></span>
+    <span class="hljs-keyword">return</span> getElementData(player, <span class="hljs-string">"money"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Player spawn වෙද්දී</span>
+addEventHandler(<span class="hljs-string">"onPlayerJoin"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        setElementData(source, <span class="hljs-string">"money"</span>, <span class="hljs-number">1000</span>)  <span class="hljs-comment">-- Starting money</span>
+        setElementData(source, <span class="hljs-string">"level"</span>, <span class="hljs-number">1</span>)     <span class="hljs-comment">-- Starting level</span>
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<hr>
+<h3 id="14-client-side-scripting">14. Client-Side Scripting</h3>
+<h4 id="client-side-script-">Client-Side Script එකක් ලියන්නේ කොහොමද:</h4>
+<p><strong>client.lua:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Resource start වෙද්දී</span>
+addEventHandler(<span class="hljs-string">"onClientResourceStart"</span>, resourceRoot,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        outputChatBox(<span class="hljs-string">"Client resource ආරම්භ විය!"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">end</span>
+)
+
+<span class="hljs-comment">-- Key press detect කිරීම</span>
+bindKey(<span class="hljs-string">"F1"</span>, <span class="hljs-string">"down"</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        outputChatBox(<span class="hljs-string">"ඔබ F1 ඔබනු ලැබීය!"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>)
+    <span class="hljs-keyword">end</span>
+)
+
+<span class="hljs-comment">-- Mouse click detect කිරීම</span>
+addEventHandler(<span class="hljs-string">"onClientClick"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(button, state, absoluteX, absoluteY, worldX, worldY, worldZ, clickedElement)</span></span>
+        <span class="hljs-keyword">if</span> button == <span class="hljs-string">"left"</span> <span class="hljs-keyword">and</span> state == <span class="hljs-string">"down"</span> <span class="hljs-keyword">then</span>
+            <span class="hljs-keyword">if</span> clickedElement <span class="hljs-keyword">and</span> getElementType(clickedElement) == <span class="hljs-string">"vehicle"</span> <span class="hljs-keyword">then</span>
+                <span class="hljs-keyword">local</span> vehicleName = getVehicleName(clickedElement)
+                outputChatBox(<span class="hljs-string">"ඔබ "</span> .. vehicleName .. <span class="hljs-string">" එකක් click කළා!"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<h4 id="render-functions-screen-draw-">Render Functions (Screen මත draw කිරීම):</h4>
+<p><strong>dxDraw භාවිතය:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Text draw කිරීම</span>
+addEventHandler(<span class="hljs-string">"onClientRender"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        <span class="hljs-keyword">local</span> screenWidth, screenHeight = guiGetScreenSize()
+
+        <span class="hljs-comment">-- Screen මැද text එකක්</span>
+        dxDrawText(<span class="hljs-string">"ආයුබෝවන් MTA:SA!"</span>, 
+            <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, screenWidth, screenHeight,
+            tocolor(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>),
+            <span class="hljs-number">2</span>, <span class="hljs-string">"default"</span>, <span class="hljs-string">"center"</span>, <span class="hljs-string">"center"</span>)
+    <span class="hljs-keyword">end</span>
+)
+
+<span class="hljs-comment">-- Rectangle draw කිරීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawHealthBar</span><span class="hljs-params">()</span></span>
+    <span class="hljs-keyword">local</span> health = getElementHealth(localPlayer)
+    <span class="hljs-keyword">local</span> maxHealth = <span class="hljs-number">100</span>
+    <span class="hljs-keyword">local</span> barWidth = <span class="hljs-number">200</span>
+    <span class="hljs-keyword">local</span> barHeight = <span class="hljs-number">20</span>
+    <span class="hljs-keyword">local</span> x = <span class="hljs-number">20</span>
+    <span class="hljs-keyword">local</span> y = <span class="hljs-number">20</span>
+
+    <span class="hljs-comment">-- Background</span>
+    dxDrawRectangle(x, y, barWidth, barHeight, tocolor(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>))
+
+    <span class="hljs-comment">-- Health bar</span>
+    <span class="hljs-keyword">local</span> healthWidth = (health / maxHealth) * barWidth
+    dxDrawRectangle(x, y, healthWidth, barHeight, tocolor(<span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>))
+
+    <span class="hljs-comment">-- Text</span>
+    dxDrawText(<span class="hljs-string">"HP: "</span> .. <span class="hljs-built_in">math</span>.floor(health), x, y, x + barWidth, y + barHeight, 
+        tocolor(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>), <span class="hljs-number">1</span>, <span class="hljs-string">"default"</span>, <span class="hljs-string">"center"</span>, <span class="hljs-string">"center"</span>)
+<span class="hljs-keyword">end</span>
+
+addEventHandler(<span class="hljs-string">"onClientRender"</span>, root, drawHealthBar)
+
+<span class="hljs-comment">-- Image draw කිරීම</span>
+addEventHandler(<span class="hljs-string">"onClientResourceStart"</span>, resourceRoot,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        <span class="hljs-comment">-- Image load කිරීම</span>
+        <span class="hljs-keyword">local</span> logoTexture = dxCreateTexture(<span class="hljs-string">"images/logo.png"</span>)
+
+        addEventHandler(<span class="hljs-string">"onClientRender"</span>, root,
+            <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+                <span class="hljs-keyword">if</span> logoTexture <span class="hljs-keyword">then</span>
+                    dxDrawImage(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">128</span>, <span class="hljs-number">128</span>, logoTexture)
+                <span class="hljs-keyword">end</span>
+            <span class="hljs-keyword">end</span>
+        )
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<h3 id="15-events-event-handlers">15. Events සහ Event Handlers</h3>
+<h4 id="events-">Events කියන්නේ මොකද්ද?</h4>
+<p>Events යනු MTA වල සිදු වන විවිධ ක්‍රියා (player join, vehicle enter, chat message, etc). අපි event handlers භාවිතයෙන් මේවාට ප්‍රතිචාර දක්වනවා.</p>
+<h4 id="server-side-events-">Server-Side Events:</h4>
+<p><strong>මූලික Event Handling:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Player join event</span>
+addEventHandler(<span class="hljs-string">"onPlayerJoin"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        <span class="hljs-keyword">local</span> playerName = getPlayerName(source)
+        outputChatBox(<span class="hljs-string">"🌟 "</span> .. playerName .. <span class="hljs-string">" සර්වරයට සම්බන්ධ විය!"</span>, root, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+
+        <span class="hljs-comment">-- Player ගේ නම set කිරීම</span>
+        setPlayerName(source, playerName)
+    <span class="hljs-keyword">end</span>
+)
+
+<span class="hljs-comment">-- Player quit event</span>
+addEventHandler(<span class="hljs-string">"onPlayerQuit"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(reason)</span></span>
+        <span class="hljs-keyword">local</span> playerName = getPlayerName(source)
+        outputChatBox(<span class="hljs-string">"👋 "</span> .. playerName .. <span class="hljs-string">" සර්වරයෙන් ඉවත් විය ("</span> .. reason .. <span class="hljs-string">")"</span>, root, <span class="hljs-number">255</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>)
+    <span class="hljs-keyword">end</span>
+)
+
+<span class="hljs-comment">-- Player chat event</span>
+addEventHandler(<span class="hljs-string">"onPlayerChat"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(message, messageType)</span></span>
+        <span class="hljs-keyword">if</span> messageType == <span class="hljs-number">0</span> <span class="hljs-keyword">then</span>  <span class="hljs-comment">-- Normal chat</span>
+            <span class="hljs-keyword">local</span> playerName = getPlayerName(source)
+            outputChatBox(<span class="hljs-string">"💬 "</span> .. playerName .. <span class="hljs-string">": "</span> .. message, root, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>)
+            cancelEvent()  <span class="hljs-comment">-- Default chat message cancel කිරීම</span>
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<p><strong>Vehicle Events:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Player vehicle enter</span>
+addEventHandler(<span class="hljs-string">"onPlayerVehicleEnter"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(vehicle, seat, jacked)</span></span>
+        <span class="hljs-keyword">local</span> playerName = getPlayerName(source)
+        <span class="hljs-keyword">local</span> vehicleName = getVehicleName(vehicle)
+
+        <span class="hljs-keyword">if</span> seat == <span class="hljs-number">0</span> <span class="hljs-keyword">then</span>  <span class="hljs-comment">-- Driver seat</span>
+            outputChatBox(<span class="hljs-string">"🚗 "</span> .. playerName .. <span class="hljs-string">" "</span> .. vehicleName .. <span class="hljs-string">" රථය drive කරයි"</span>, root, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">else</span>
+            outputChatBox(<span class="hljs-string">"🚗 "</span> .. playerName .. <span class="hljs-string">" "</span> .. vehicleName .. <span class="hljs-string">" රථයේ ගමන් කරයි"</span>, root, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+)
+
+<span class="hljs-comment">-- Vehicle damage</span>
+addEventHandler(<span class="hljs-string">"onVehicleDamage"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(loss)</span></span>
+        <span class="hljs-keyword">local</span> health = getElementHealth(source)
+        <span class="hljs-keyword">if</span> health &lt; <span class="hljs-number">300</span> <span class="hljs-keyword">then</span>
+            outputChatBox(<span class="hljs-string">"⚠️ රථය හානි වී ඇත! සෞඛ්‍යය: "</span> .. <span class="hljs-built_in">math</span>.floor(health), root, <span class="hljs-number">255</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<h4 id="client-side-events-">Client-Side Events:</h4>
+<p><strong>Render Events:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Screen මත FPS display කිරීම</span>
+<span class="hljs-keyword">local</span> fps = <span class="hljs-number">0</span>
+<span class="hljs-keyword">local</span> frames = <span class="hljs-number">0</span>
+<span class="hljs-keyword">local</span> lastTick = getTickCount()
+
+addEventHandler(<span class="hljs-string">"onClientRender"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        frames = frames + <span class="hljs-number">1</span>
+
+        <span class="hljs-keyword">local</span> currentTick = getTickCount()
+        <span class="hljs-keyword">if</span> currentTick - lastTick &gt;= <span class="hljs-number">1000</span> <span class="hljs-keyword">then</span>
+            fps = frames
+            frames = <span class="hljs-number">0</span>
+            lastTick = currentTick
+        <span class="hljs-keyword">end</span>
+
+        dxDrawText(<span class="hljs-string">"FPS: "</span> .. fps, <span class="hljs-number">10</span>, <span class="hljs-number">50</span>, <span class="hljs-keyword">nil</span>, <span class="hljs-keyword">nil</span>, tocolor(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>), <span class="hljs-number">1</span>, <span class="hljs-string">"default"</span>)
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<p><strong>Key Events:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Key bindings</span>
+bindKey(<span class="hljs-string">"F2"</span>, <span class="hljs-string">"down"</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        outputChatBox(<span class="hljs-string">"🎮 ඔබ F2 යතුර ඔබනු ලැබීය!"</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+
+        <span class="hljs-comment">-- Vehicle spawn කිරීම</span>
+        <span class="hljs-keyword">local</span> player = localPlayer
+        <span class="hljs-keyword">local</span> x, y, z = getElementPosition(player)
+        <span class="hljs-keyword">local</span> vehicle = createVehicle(<span class="hljs-number">411</span>, x + <span class="hljs-number">3</span>, y, z)  <span class="hljs-comment">-- Infernus</span>
+
+        <span class="hljs-keyword">if</span> vehicle <span class="hljs-keyword">then</span>
+            warpPedIntoVehicle(player, vehicle)
+            outputChatBox(<span class="hljs-string">"🚗 Infernus රථය spawn කරන ලදී!"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+)
+
+<span class="hljs-comment">-- Multiple keys</span>
+bindKey(<span class="hljs-string">"lshift"</span>, <span class="hljs-string">"down"</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        setControlState(<span class="hljs-string">"sprint"</span>, <span class="hljs-keyword">true</span>)
+    <span class="hljs-keyword">end</span>
+)
+
+bindKey(<span class="hljs-string">"lshift"</span>, <span class="hljs-string">"up"</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        setControlState(<span class="hljs-string">"sprint"</span>, <span class="hljs-keyword">false</span>)
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<h4 id="custom-events-">Custom Events හදන්නේ කොහොමද:</h4>
+<p><strong>Server-Side Custom Event:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Custom event define කිරීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">givePlayerReward</span><span class="hljs-params">(player, rewardType, amount)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isElement(player) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">local</span> rewardData = {
+        player = player,
+        <span class="hljs-built_in">type</span> = rewardType,
+        amount = amount,
+        timestamp = getRealTime().timestamp
+    }
+
+    <span class="hljs-comment">-- Custom event trigger කිරීම</span>
+    triggerEvent(<span class="hljs-string">"onPlayerReward"</span>, player, rewardData)
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Custom event handle කිරීම</span>
+addEvent(<span class="hljs-string">"onPlayerReward"</span>, <span class="hljs-keyword">true</span>)
+addEventHandler(<span class="hljs-string">"onPlayerReward"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(rewardData)</span></span>
+        <span class="hljs-keyword">local</span> playerName = getPlayerName(source)
+        outputChatBox(<span class="hljs-string">"🎁 "</span> .. playerName .. <span class="hljs-string">" සම්මානයක් ලැබුණි: "</span> .. rewardData.<span class="hljs-built_in">type</span>, root, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+
+        <span class="hljs-comment">-- Reward එක process කිරීම</span>
+        <span class="hljs-keyword">if</span> rewardData.<span class="hljs-built_in">type</span> == <span class="hljs-string">"money"</span> <span class="hljs-keyword">then</span>
+            givePlayerMoney(source, rewardData.amount)
+            outputChatBox(<span class="hljs-string">"💰 ඔබට ඩොලර් "</span> .. rewardData.amount .. <span class="hljs-string">" ලැබුණි!"</span>, source, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">elseif</span> rewardData.<span class="hljs-built_in">type</span> == <span class="hljs-string">"experience"</span> <span class="hljs-keyword">then</span>
+            <span class="hljs-keyword">local</span> currentXP = getElementData(source, <span class="hljs-string">"experience"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+            setElementData(source, <span class="hljs-string">"experience"</span>, currentXP + rewardData.amount)
+            outputChatBox(<span class="hljs-string">"⭐ ඔබට XP "</span> .. rewardData.amount .. <span class="hljs-string">" ලැබුණි!"</span>, source, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<p><strong>Client to Server Communication:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Client-side: Event trigger කිරීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">requestVehicleSpawn</span><span class="hljs-params">(vehicleModel)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> vehicleModel <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+
+    triggerServerEvent(<span class="hljs-string">"onClientRequestVehicle"</span>, localPlayer, vehicleModel)
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Server-side: Event handle කිරීම</span>
+addEvent(<span class="hljs-string">"onClientRequestVehicle"</span>, <span class="hljs-keyword">true</span>)
+addEventHandler(<span class="hljs-string">"onClientRequestVehicle"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(vehicleModel)</span></span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isElement(source) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">end</span>
+
+        <span class="hljs-keyword">local</span> x, y, z = getElementPosition(source)
+        <span class="hljs-keyword">local</span> vehicle = createVehicle(vehicleModel, x + <span class="hljs-number">5</span>, y, z)
+
+        <span class="hljs-keyword">if</span> vehicle <span class="hljs-keyword">then</span>
+            warpPedIntoVehicle(source, vehicle)
+            outputChatBox(<span class="hljs-string">"🚗 රථය spawn කරන ලදී!"</span>, source, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">else</span>
+            outputChatBox(<span class="hljs-string">"❌ රථය spawn කිරීමට නොහැක!"</span>, source, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<hr>
+<h3 id="16-elements-data">16. Elements සහ Data</h3>
+<h4 id="elements-">Elements කියන්නේ මොකද්ද?</h4>
+<p>MTA වල හැම දෙයක්ම element එකක්: players, vehicles, objects, markers, etc.</p>
+<h4 id="element-types-">Element Types:</h4>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Element types</span>
+local elementTypes = {
+    <span class="hljs-string">"player"</span>, <span class="hljs-string">"vehicle"</span>, <span class="hljs-string">"object"</span>, <span class="hljs-string">"marker"</span>, <span class="hljs-string">"blip"</span>, <span class="hljs-string">"pickup"</span>, <span class="hljs-string">"radararea"</span>, <span class="hljs-string">"team"</span>
+}
+
+<span class="hljs-comment">-- Element type check කිරීම</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title">isValidPlayer</span>(element)
+    <span class="hljs-keyword">return</span> <span class="hljs-type">isElement(element)</span> <span class="hljs-keyword">and</span> getElementType(element) == <span class="hljs-string">"player"</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-title">isValidVehicle</span>(element)
+    <span class="hljs-keyword">return</span> <span class="hljs-type">isElement(element)</span> <span class="hljs-keyword">and</span> getElementType(element) == <span class="hljs-string">"vehicle"</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="element-data-management-">Element Data Management:</h4>
+<p><strong>Element Data භාවිතය:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Player data management</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setupPlayerData</span><span class="hljs-params">(player)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isElement(player) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment">-- Basic player data</span>
+    setElementData(player, <span class="hljs-string">"money"</span>, <span class="hljs-number">1000</span>)
+    setElementData(player, <span class="hljs-string">"level"</span>, <span class="hljs-number">1</span>)
+    setElementData(player, <span class="hljs-string">"experience"</span>, <span class="hljs-number">0</span>)
+    setElementData(player, <span class="hljs-string">"playTime"</span>, <span class="hljs-number">0</span>)
+    setElementData(player, <span class="hljs-string">"kills"</span>, <span class="hljs-number">0</span>)
+    setElementData(player, <span class="hljs-string">"deaths"</span>, <span class="hljs-number">0</span>)
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Data ලබා ගැනීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getPlayerStats</span><span class="hljs-params">(player)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isValidPlayer(player) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">nil</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">return</span> {
+        money = getElementData(player, <span class="hljs-string">"money"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>,
+        level = getElementData(player, <span class="hljs-string">"level"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">1</span>,
+        experience = getElementData(player, <span class="hljs-string">"experience"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>,
+        playTime = getElementData(player, <span class="hljs-string">"playTime"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>,
+        kills = getElementData(player, <span class="hljs-string">"kills"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>,
+        deaths = getElementData(player, <span class="hljs-string">"deaths"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+    }
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Data update කිරීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addPlayerMoney</span><span class="hljs-params">(player, amount)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isValidPlayer(player) <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> amount <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">local</span> currentMoney = getElementData(player, <span class="hljs-string">"money"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+    setElementData(player, <span class="hljs-string">"money"</span>, currentMoney + amount)
+
+    <span class="hljs-comment">-- Custom event trigger කිරීම</span>
+    triggerEvent(<span class="hljs-string">"onPlayerMoneyChange"</span>, player, amount, currentMoney + amount)
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="element-creation-destruction-">Element Creation සහ Destruction:</h4>
+<p><strong>Vehicles Create කිරීම:</strong></p>
+<pre><code class="lang-lua">-- <span class="hljs-built_in">Vehicle</span> <span class="hljs-built_in">spawn</span> function
+function spawnPlayerVehicle(<span class="hljs-built_in">player</span>, model, x, y, z)
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">not</span> isValidPlayer(<span class="hljs-built_in">player</span>) <span class="hljs-keyword">then</span> return <span class="hljs-literal">nil</span> end
+
+    -- <span class="hljs-built_in">Position</span> නොමැතිනම් <span class="hljs-built_in">player</span> <span class="hljs-built_in">position</span> එක භාවිතා කිරීම
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">not</span> x <span class="hljs-built_in">or</span> <span class="hljs-built_in">not</span> y <span class="hljs-built_in">or</span> <span class="hljs-built_in">not</span> z <span class="hljs-keyword">then</span>
+        x, y, z = getElementPosition(<span class="hljs-built_in">player</span>)
+        x = x + <span class="hljs-number">3</span>  -- <span class="hljs-built_in">Player</span> ගෙන් <span class="hljs-number">3</span> <span class="hljs-built_in">units</span> දුරින්
+    end
+
+    <span class="hljs-built_in">local</span> <span class="hljs-built_in">vehicle</span> = <span class="hljs-built_in">createVehicle</span>(model <span class="hljs-built_in">or</span> <span class="hljs-number">411</span>, x, y, z)  -- <span class="hljs-keyword">Default</span>: Infernus
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">vehicle</span> <span class="hljs-keyword">then</span>
+        -- <span class="hljs-built_in">Vehicle</span> data <span class="hljs-built_in">set</span> කිරීම
+        setElementData(<span class="hljs-built_in">vehicle</span>, <span class="hljs-string">"owner"</span>, <span class="hljs-built_in">player</span>)
+        setElementData(<span class="hljs-built_in">vehicle</span>, <span class="hljs-string">"spawnTime"</span>, getRealTime().timestamp)
+
+        -- <span class="hljs-built_in">Player</span> ගේ <span class="hljs-built_in">vehicle</span> <span class="hljs-built_in">list</span> එකට add කිරීම
+        <span class="hljs-built_in">local</span> playerVehicles = getElementData(<span class="hljs-built_in">player</span>, <span class="hljs-string">"vehicles"</span>) <span class="hljs-built_in">or</span> {}
+        table.insert(playerVehicles, <span class="hljs-built_in">vehicle</span>)
+        setElementData(<span class="hljs-built_in">player</span>, <span class="hljs-string">"vehicles"</span>, playerVehicles)
+
+        warpPedIntoVehicle(<span class="hljs-built_in">player</span>, <span class="hljs-built_in">vehicle</span>)
+        outputChatBox(<span class="hljs-string">"🚗 රථය spawn කරන ලදී!"</span>, <span class="hljs-built_in">player</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">else</span>
+        outputChatBox(<span class="hljs-string">"❌ රථය spawn කිරීමට නොහැක!"</span>, <span class="hljs-built_in">player</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+    end
+
+    return <span class="hljs-built_in">vehicle</span>
+end
+</code></pre>
+<p><strong>Markers සහ Blips:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Marker create කිරීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createSafeZone</span><span class="hljs-params">(x, y, z, size)</span></span>
+    <span class="hljs-keyword">local</span> marker = createMarker(x, y, z, <span class="hljs-string">"cylinder"</span>, size, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>)
+
+    <span class="hljs-keyword">if</span> marker <span class="hljs-keyword">then</span>
+        <span class="hljs-comment">-- Marker events</span>
+        addEventHandler(<span class="hljs-string">"onMarkerHit"</span>, marker, onSafeZoneEnter)
+        addEventHandler(<span class="hljs-string">"onMarkerLeave"</span>, marker, onSafeZoneExit)
+
+        <span class="hljs-comment">-- Blip create කිරීම</span>
+        <span class="hljs-keyword">local</span> blip = createBlip(x, y, z, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">99999</span>)
+        setElementData(blip, <span class="hljs-string">"safeZone"</span>, <span class="hljs-keyword">true</span>)
+
+        <span class="hljs-keyword">return</span> marker, blip
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">nil</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Marker hit event</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onSafeZoneEnter</span><span class="hljs-params">(hitElement, matchingDimension)</span></span>
+    <span class="hljs-keyword">if</span> getElementType(hitElement) == <span class="hljs-string">"player"</span> <span class="hljs-keyword">and</span> matchingDimension <span class="hljs-keyword">then</span>
+        outputChatBox(<span class="hljs-string">"🛡️ ඔබ සුරක්ෂිත කලාපයකට පිවිසියි!"</span>, hitElement, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+        setElementData(hitElement, <span class="hljs-string">"inSafeZone"</span>, <span class="hljs-keyword">true</span>)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onSafeZoneExit</span><span class="hljs-params">(hitElement, matchingDimension)</span></span>
+    <span class="hljs-keyword">if</span> getElementType(hitElement) == <span class="hljs-string">"player"</span> <span class="hljs-keyword">and</span> matchingDimension <span class="hljs-keyword">then</span>
+        outputChatBox(<span class="hljs-string">"⚠️ ඔබ සුරක්ෂිත කලාපයෙන් පිටව ගියි!"</span>, hitElement, <span class="hljs-number">255</span>, <span class="hljs-number">100</span>, <span class="hljs-number">0</span>)
+        setElementData(hitElement, <span class="hljs-string">"inSafeZone"</span>, <span class="hljs-keyword">false</span>)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<hr>
+<h3 id="17-gui-development">17. GUI Development</h3>
+<h4 id="gui-elements-">GUI Elements:</h4>
+<p><strong>මූලික GUI Creation:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- GUI variables</span>
+<span class="hljs-keyword">local</span> screenWidth, screenHeight = guiGetScreenSize()
+<span class="hljs-keyword">local</span> guiElements = {}
+
+<span class="hljs-comment">-- Main window create කිරීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMainMenu</span><span class="hljs-params">()</span></span>
+    <span class="hljs-comment">-- Window</span>
+    guiElements.window = guiCreateWindow(screenWidth/<span class="hljs-number">2</span><span class="hljs-number">-150</span>, screenHeight/<span class="hljs-number">2</span><span class="hljs-number">-200</span>, <span class="hljs-number">300</span>, <span class="hljs-number">400</span>, <span class="hljs-string">"මුල් මෙනුව"</span>, <span class="hljs-keyword">false</span>)
+    guiWindowSetSizable(guiElements.window, <span class="hljs-keyword">false</span>)
+
+    <span class="hljs-comment">-- Buttons</span>
+    guiElements.playButton = guiCreateButton(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">200</span>, <span class="hljs-number">40</span>, <span class="hljs-string">"ක්‍රීඩාව අරඹන්න"</span>, <span class="hljs-keyword">false</span>, guiElements.window)
+    guiElements.settingsButton = guiCreateButton(<span class="hljs-number">50</span>, <span class="hljs-number">110</span>, <span class="hljs-number">200</span>, <span class="hljs-number">40</span>, <span class="hljs-string">"සැකසුම්"</span>, <span class="hljs-keyword">false</span>, guiElements.window)
+    guiElements.quitButton = guiCreateButton(<span class="hljs-number">50</span>, <span class="hljs-number">170</span>, <span class="hljs-number">200</span>, <span class="hljs-number">40</span>, <span class="hljs-string">"පිටවීම"</span>, <span class="hljs-keyword">false</span>, guiElements.window)
+
+    <span class="hljs-comment">-- Labels</span>
+    guiElements.titleLabel = guiCreateLabel(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">300</span>, <span class="hljs-number">30</span>, <span class="hljs-string">"MTA:SA Roleplay"</span>, <span class="hljs-keyword">false</span>, guiElements.window)
+    guiLabelSetHorizontalAlign(guiElements.titleLabel, <span class="hljs-string">"center"</span>)
+
+    <span class="hljs-comment">-- Events</span>
+    addEventHandler(<span class="hljs-string">"onClientGUIClick"</span>, guiElements.playButton, onPlayClick, <span class="hljs-keyword">false</span>)
+    addEventHandler(<span class="hljs-string">"onClientGUIClick"</span>, guiElements.settingsButton, onSettingsClick, <span class="hljs-keyword">false</span>)
+    addEventHandler(<span class="hljs-string">"onClientGUIClick"</span>, guiElements.quitButton, onQuitClick, <span class="hljs-keyword">false</span>)
+
+    <span class="hljs-comment">-- Initially hide කිරීම</span>
+    guiSetVisible(guiElements.window, <span class="hljs-keyword">false</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Button click events</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onPlayClick</span><span class="hljs-params">()</span></span>
+    guiSetVisible(guiElements.window, <span class="hljs-keyword">false</span>)
+    showCursor(<span class="hljs-keyword">false</span>)
+    triggerServerEvent(<span class="hljs-string">"onClientRequestSpawn"</span>, localPlayer)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onSettingsClick</span><span class="hljs-params">()</span></span>
+    createSettingsMenu()
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onQuitClick</span><span class="hljs-params">()</span></span>
+    triggerServerEvent(<span class="hljs-string">"onClientRequestQuit"</span>, localPlayer)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Menu toggle කිරීම</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleMainMenu</span><span class="hljs-params">()</span></span>
+    <span class="hljs-keyword">local</span> visible = <span class="hljs-keyword">not</span> guiGetVisible(guiElements.window)
+    guiSetVisible(guiElements.window, visible)
+    showCursor(visible)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- F1 key bind</span>
+bindKey(<span class="hljs-string">"F1"</span>, <span class="hljs-string">"down"</span>, toggleMainMenu)
+</code></pre>
+<p><strong>DX GUI (More Advanced):</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- DX based GUI</span>
+<span class="hljs-keyword">local</span> dxGUI = {
+    visible = <span class="hljs-keyword">false</span>,
+    elements = {}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createDXButton</span><span class="hljs-params">(x, y, width, height, text, onClick)</span></span>
+    <span class="hljs-keyword">local</span> button = {
+        x = x, y = y, width = width, height = height,
+        text = text, onClick = onClick,
+        hover = <span class="hljs-keyword">false</span>, click = <span class="hljs-keyword">false</span>
+    }
+
+    <span class="hljs-built_in">table</span>.insert(dxGUI.elements, button)
+    <span class="hljs-keyword">return</span> button
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">drawDXGUI</span><span class="hljs-params">()</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> dxGUI.visible <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment">-- Background</span>
+    dxDrawRectangle(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, screenWidth, screenHeight, tocolor(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">150</span>))
+
+    <span class="hljs-comment">-- Main panel</span>
+    <span class="hljs-keyword">local</span> panelWidth, panelHeight = <span class="hljs-number">400</span>, <span class="hljs-number">300</span>
+    <span class="hljs-keyword">local</span> panelX, panelY = (screenWidth - panelWidth)/<span class="hljs-number">2</span>, (screenHeight - panelHeight)/<span class="hljs-number">2</span>
+
+    dxDrawRectangle(panelX, panelY, panelWidth, panelHeight, tocolor(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">200</span>))
+    dxDrawRectangle(panelX, panelY, panelWidth, <span class="hljs-number">30</span>, tocolor(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-number">255</span>))
+    dxDrawText(<span class="hljs-string">"DX GUI Panel"</span>, panelX, panelY, panelX + panelWidth, panelY + <span class="hljs-number">30</span>, 
+        tocolor(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>), <span class="hljs-number">1</span>, <span class="hljs-string">"default"</span>, <span class="hljs-string">"center"</span>, <span class="hljs-string">"center"</span>)
+
+    <span class="hljs-comment">-- Elements draw කිරීම</span>
+    <span class="hljs-keyword">for</span> _, element <span class="hljs-keyword">in</span> <span class="hljs-built_in">ipairs</span>(dxGUI.elements) <span class="hljs-keyword">do</span>
+        <span class="hljs-keyword">local</span> color = tocolor(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">200</span>)
+
+        <span class="hljs-keyword">if</span> element.hover <span class="hljs-keyword">then</span>
+            color = tocolor(<span class="hljs-number">120</span>, <span class="hljs-number">120</span>, <span class="hljs-number">120</span>, <span class="hljs-number">200</span>)
+        <span class="hljs-keyword">end</span>
+
+        <span class="hljs-keyword">if</span> element.click <span class="hljs-keyword">then</span>
+            color = tocolor(<span class="hljs-number">80</span>, <span class="hljs-number">80</span>, <span class="hljs-number">80</span>, <span class="hljs-number">200</span>)
+        <span class="hljs-keyword">end</span>
+
+        dxDrawRectangle(element.x, element.y, element.width, element.height, color)
+        dxDrawText(element.text, element.x, element.y, element.x + element.width, element.y + element.height,
+            tocolor(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>), <span class="hljs-number">1</span>, <span class="hljs-string">"default"</span>, <span class="hljs-string">"center"</span>, <span class="hljs-string">"center"</span>)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleDXGUIClick</span><span class="hljs-params">(button, state, absoluteX, absoluteY)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> dxGUI.visible <span class="hljs-keyword">or</span> button ~= <span class="hljs-string">"left"</span> <span class="hljs-keyword">or</span> state ~= <span class="hljs-string">"down"</span> <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">for</span> _, element <span class="hljs-keyword">in</span> <span class="hljs-built_in">ipairs</span>(dxGUI.elements) <span class="hljs-keyword">do</span>
+        <span class="hljs-keyword">if</span> absoluteX &gt;= element.x <span class="hljs-keyword">and</span> absoluteX &lt;= element.x + element.width <span class="hljs-keyword">and</span>
+           absoluteY &gt;= element.y <span class="hljs-keyword">and</span> absoluteY &lt;= element.y + element.height <span class="hljs-keyword">then</span>
+
+            element.click = <span class="hljs-keyword">true</span>
+            <span class="hljs-keyword">if</span> element.onClick <span class="hljs-keyword">then</span>
+                element.onClick()
+            <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Event handlers</span>
+addEventHandler(<span class="hljs-string">"onClientRender"</span>, root, drawDXGUI)
+addEventHandler(<span class="hljs-string">"onClientClick"</span>, root, handleDXGUIClick)
+</code></pre>
+<hr>
+<h3 id="18-database-integration">18. Database Integration</h3>
+<h4 id="sqlite-database-">SQLite Database:</h4>
+<p><strong>Database Connection:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Database connection</span>
+local db = nil
+
+function connectDatabase()
+    if db then return db <span class="hljs-keyword">end</span>
+
+    db = dbConnect(<span class="hljs-string">"sqlite"</span>, <span class="hljs-string">":/players.db"</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> db <span class="hljs-keyword">then</span>
+        outputDebugString(<span class="hljs-string">"Database connection failed!"</span>)
+        <span class="hljs-keyword">return</span> nil
+    <span class="hljs-keyword">end</span>
+
+    outputDebugString(<span class="hljs-string">"Database connected successfully!"</span>)
+    createTables()
+    <span class="hljs-keyword">return</span> db
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Tables create කිරීම</span>
+<span class="hljs-keyword">function</span> createTables()
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> db <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment">-- Players table</span>
+    dbExec(db, [[
+        <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> players (
+            <span class="hljs-keyword">id</span> <span class="hljs-built_in">INTEGER</span> PRIMARY <span class="hljs-keyword">KEY</span> AUTOINCREMENT,
+            <span class="hljs-keyword">account</span> <span class="hljs-built_in">TEXT</span> <span class="hljs-keyword">UNIQUE</span>,
+            <span class="hljs-keyword">name</span> <span class="hljs-built_in">TEXT</span>,
+            money <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1000</span>,
+            <span class="hljs-keyword">level</span> <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+            experience <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>,
+            play_time <span class="hljs-built_in">INTEGER</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">0</span>,
+            created_at DATETIME <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>
+        )
+    ]])
+
+    <span class="hljs-comment">-- Vehicles table</span>
+    dbExec(db, [[
+        <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> vehicles (
+            <span class="hljs-keyword">id</span> <span class="hljs-built_in">INTEGER</span> PRIMARY <span class="hljs-keyword">KEY</span> AUTOINCREMENT,
+            owner_account <span class="hljs-built_in">TEXT</span>,
+            <span class="hljs-keyword">model</span> <span class="hljs-built_in">INTEGER</span>,
+            pos_x <span class="hljs-built_in">REAL</span>,
+            pos_y <span class="hljs-built_in">REAL</span>,
+            pos_z <span class="hljs-built_in">REAL</span>,
+            rotation <span class="hljs-built_in">REAL</span>,
+            color1 <span class="hljs-built_in">INTEGER</span>,
+            color2 <span class="hljs-built_in">INTEGER</span>,
+            created_at DATETIME <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>
+        )
+    ]])
+
+    outputDebugString(<span class="hljs-string">"Database tables created!"</span>)
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><strong>Player Data Save/Load:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Player data save කිරීම</span>
+function savePlayerData(player)
+    if not isValidPlayer(player) or not db then return false <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">account</span> = getPlayerAccount(player)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">account</span> <span class="hljs-keyword">or</span> isGuestAccount(<span class="hljs-keyword">account</span>) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">local</span> accountName = getAccountName(<span class="hljs-keyword">account</span>)
+    <span class="hljs-keyword">local</span> playerName = getPlayerName(player)
+    <span class="hljs-keyword">local</span> money = getElementData(player, <span class="hljs-string">"money"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">level</span> = getElementData(player, <span class="hljs-string">"level"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">local</span> experience = getElementData(player, <span class="hljs-string">"experience"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+    <span class="hljs-keyword">local</span> playTime = getElementData(player, <span class="hljs-string">"playTime"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+
+    <span class="hljs-comment">-- Check if player exists</span>
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">query</span> = dbQuery(db, <span class="hljs-string">"SELECT id FROM players WHERE account = ?"</span>, accountName)
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">result</span> = dbPoll(<span class="hljs-keyword">query</span>, <span class="hljs-number">-1</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">result</span> <span class="hljs-keyword">and</span> #<span class="hljs-keyword">result</span> &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-comment">-- Update existing player</span>
+        dbExec(db, 
+            <span class="hljs-string">"UPDATE players SET name = ?, money = ?, level = ?, experience = ?, play_time = ? WHERE account = ?"</span>,
+            playerName, money, <span class="hljs-keyword">level</span>, experience, playTime, accountName
+        )
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-comment">-- Insert new player</span>
+        dbExec(db,
+            <span class="hljs-string">"INSERT INTO players (account, name, money, level, experience, play_time) VALUES (?, ?, ?, ?, ?, ?)"</span>,
+            accountName, playerName, money, <span class="hljs-keyword">level</span>, experience, playTime
+        )
+    <span class="hljs-keyword">end</span>
+
+    outputDebugString(<span class="hljs-string">"Player data saved: "</span> .. playerName)
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Player data load කිරීම</span>
+<span class="hljs-keyword">function</span> loadPlayerData(player)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isValidPlayer(player) <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span> db <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">account</span> = getPlayerAccount(player)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">account</span> <span class="hljs-keyword">or</span> isGuestAccount(<span class="hljs-keyword">account</span>) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">local</span> accountName = getAccountName(<span class="hljs-keyword">account</span>)
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">query</span> = dbQuery(db, <span class="hljs-string">"SELECT * FROM players WHERE account = ?"</span>, accountName)
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">result</span> = dbPoll(<span class="hljs-keyword">query</span>, <span class="hljs-number">-1</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">result</span> <span class="hljs-keyword">and</span> #<span class="hljs-keyword">result</span> &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">then</span>
+        <span class="hljs-keyword">local</span> <span class="hljs-keyword">data</span> = <span class="hljs-keyword">result</span>[<span class="hljs-number">1</span>]
+
+        <span class="hljs-comment">-- Element data set කිරීම</span>
+        setElementData(player, <span class="hljs-string">"money"</span>, data.money)
+        setElementData(player, <span class="hljs-string">"level"</span>, data.level)
+        setElementData(player, <span class="hljs-string">"experience"</span>, data.experience)
+        setElementData(player, <span class="hljs-string">"playTime"</span>, data.play_time)
+
+        outputChatBox(<span class="hljs-string">"📊 ඔබගේ දත්ත ලබා ගන්නා ලදී!"</span>, player, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    <span class="hljs-keyword">else</span>
+        <span class="hljs-comment">-- New player setup</span>
+        setupPlayerData(player)
+        outputChatBox(<span class="hljs-string">"👋 සාදරයෙන් පිළිගනිමු! ඔබගේ නව ගිණුම සාදන ලදී."</span>, player, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><strong>Auto-save System:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Auto-save timer</span>
+setTimer(
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        <span class="hljs-keyword">for</span> _, player <span class="hljs-keyword">in</span> <span class="hljs-built_in">ipairs</span>(getElementsByType(<span class="hljs-string">"player"</span>)) <span class="hljs-keyword">do</span>
+            savePlayerData(player)
+        <span class="hljs-keyword">end</span>
+        outputDebugString(<span class="hljs-string">"Auto-save completed!"</span>)
+    <span class="hljs-keyword">end</span>,
+    <span class="hljs-number">300000</span>, <span class="hljs-number">0</span>  <span class="hljs-comment">-- 5 minutes</span>
+)
+
+<span class="hljs-comment">-- Player quit වෙද්දී save කිරීම</span>
+addEventHandler(<span class="hljs-string">"onPlayerQuit"</span>, root,
+    <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>
+        savePlayerData(source)
+    <span class="hljs-keyword">end</span>
+)
+</code></pre>
+<hr>
+<h3 id="19-advanced-concepts">19. Advanced Concepts</h3>
+<h4 id="oop-object-oriented-programming-">OOP (Object-Oriented Programming):</h4>
+<p><strong>Player Class:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Player class definition</span>
+Player = {}
+Player.__index = Player
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Player:create</span><span class="hljs-params">(account)</span></span>
+    <span class="hljs-keyword">local</span> instance = {}
+    <span class="hljs-built_in">setmetatable</span>(instance, Player)
+
+    instance.account = account
+    instance.element = <span class="hljs-keyword">nil</span>
+    instance.data = {}
+
+    <span class="hljs-keyword">return</span> instance
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Player:setElement</span><span class="hljs-params">(playerElement)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isValidPlayer(playerElement) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+    self.element = playerElement
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Player:getMoney</span><span class="hljs-params">()</span></span>
+    <span class="hljs-keyword">return</span> getElementData(self.element, <span class="hljs-string">"money"</span>) <span class="hljs-keyword">or</span> <span class="hljs-number">0</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Player:addMoney</span><span class="hljs-params">(amount)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> amount <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">local</span> current = self:getMoney()
+    setElementData(self.element, <span class="hljs-string">"money"</span>, current + amount)
+
+    triggerEvent(<span class="hljs-string">"onPlayerMoneyChange"</span>, self.element, amount, current + amount)
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Player:save</span><span class="hljs-params">()</span></span>
+    <span class="hljs-keyword">return</span> savePlayerData(self.element)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Player manager</span>
+PlayerManager = {
+    players = {}
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">PlayerManager:getPlayer</span><span class="hljs-params">(account)</span></span>
+    <span class="hljs-keyword">return</span> self.players[account]
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">PlayerManager:addPlayer</span><span class="hljs-params">(account, playerElement)</span></span>
+    <span class="hljs-keyword">local</span> player = Player:create(account)
+    player:setElement(playerElement)
+
+    self.players[account] = player
+    <span class="hljs-keyword">return</span> player
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">PlayerManager:removePlayer</span><span class="hljs-params">(account)</span></span>
+    <span class="hljs-keyword">local</span> player = self.players[account]
+    <span class="hljs-keyword">if</span> player <span class="hljs-keyword">then</span>
+        player:save()
+        self.players[account] = <span class="hljs-keyword">nil</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="performance-optimization-">Performance Optimization:</h4>
+<p><strong>Efficient Event Handling:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Event handler optimization</span>
+<span class="hljs-keyword">local</span> eventHandlers = {}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addOptimizedEventHandler</span><span class="hljs-params">(eventName, attachedTo, handler)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> eventHandlers[eventName] <span class="hljs-keyword">then</span>
+        eventHandlers[eventName] = {}
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-built_in">table</span>.insert(eventHandlers[eventName], {
+        attachedTo = attachedTo,
+        handler = handler
+    })
+
+    addEventHandler(eventName, attachedTo, handler)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">removeOptimizedEventHandlers</span><span class="hljs-params">(eventName)</span></span>
+    <span class="hljs-keyword">if</span> eventHandlers[eventName] <span class="hljs-keyword">then</span>
+        <span class="hljs-keyword">for</span> _, handlerData <span class="hljs-keyword">in</span> <span class="hljs-built_in">ipairs</span>(eventHandlers[eventName]) <span class="hljs-keyword">do</span>
+            removeEventHandler(eventName, handlerData.attachedTo, handlerData.handler)
+        <span class="hljs-keyword">end</span>
+        eventHandlers[eventName] = <span class="hljs-keyword">nil</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p><strong>Memory Management:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Garbage collection</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cleanupUnusedElements</span><span class="hljs-params">()</span></span>
+    <span class="hljs-keyword">local</span> count = <span class="hljs-number">0</span>
+
+    <span class="hljs-comment">-- Clean up unused vehicles</span>
+    <span class="hljs-keyword">for</span> _, vehicle <span class="hljs-keyword">in</span> <span class="hljs-built_in">ipairs</span>(getElementsByType(<span class="hljs-string">"vehicle"</span>)) <span class="hljs-keyword">do</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> getElementData(vehicle, <span class="hljs-string">"inUse"</span>) <span class="hljs-keyword">then</span>
+            <span class="hljs-keyword">if</span> getElementHealth(vehicle) &lt; <span class="hljs-number">250</span> <span class="hljs-keyword">then</span>
+                destroyElement(vehicle)
+                count = count + <span class="hljs-number">1</span>
+            <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    outputDebugString(<span class="hljs-string">"Cleanup completed: "</span> .. count .. <span class="hljs-string">" elements removed"</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Regular cleanup</span>
+setTimer(cleanupUnusedElements, <span class="hljs-number">60000</span>, <span class="hljs-number">0</span>)  <span class="hljs-comment">-- 1 minute</span>
+</code></pre>
+<hr>
+<h3 id="20-best-practices">20. Best Practices</h3>
+<h4 id="code-organization-">Code Organization:</h4>
+<p><strong>Modular Structure:</strong></p>
+<pre><code>resources/
+└── mygamemode/
+    ├── meta<span class="hljs-selector-class">.xml</span>
+    ├── main<span class="hljs-selector-class">.lua</span>
+    ├── config<span class="hljs-selector-class">.lua</span>
+    ├── modules/
+    │   ├── player/
+    │   │   ├── manager<span class="hljs-selector-class">.lua</span>
+    │   │   ├── inventory<span class="hljs-selector-class">.lua</span>
+    │   │   └── skills<span class="hljs-selector-class">.lua</span>
+    │   ├── vehicles/
+    │   │   ├── manager<span class="hljs-selector-class">.lua</span>
+    │   │   ├── spawner<span class="hljs-selector-class">.lua</span>
+    │   │   └── tuning<span class="hljs-selector-class">.lua</span>
+    │   └── database/
+    │       ├── connection<span class="hljs-selector-class">.lua</span>
+    │       ├── players<span class="hljs-selector-class">.lua</span>
+    │       └── vehicles<span class="hljs-selector-class">.lua</span>
+    ├── client/
+    │   ├── gui/
+    │   │   ├── main<span class="hljs-selector-class">.lua</span>
+    │   │   ├── hud<span class="hljs-selector-class">.lua</span>
+    │   │   └── inventory<span class="hljs-selector-class">.lua</span>
+    │   └── rendering/
+    │       ├── main<span class="hljs-selector-class">.lua</span>
+    │       └── effects<span class="hljs-selector-class">.lua</span>
+    └── shared/
+        ├── utils<span class="hljs-selector-class">.lua</span>
+        └── constants.lua
+</code></pre><h4 id="security-best-practices-">Security Best Practices:</h4>
+<p><strong>Input Validation:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validatePlayerInput</span><span class="hljs-params">(player, input, maxLength)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isValidPlayer(player) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> input <span class="hljs-keyword">or</span> <span class="hljs-built_in">type</span>(input) ~= <span class="hljs-string">"string"</span> <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">if</span> #input &gt; (maxLength <span class="hljs-keyword">or</span> <span class="hljs-number">128</span>) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-comment">-- Remove harmful characters</span>
+    <span class="hljs-keyword">local</span> cleanInput = <span class="hljs-built_in">string</span>.gsub(input, <span class="hljs-string">"[&lt;&gt;\"']"</span>, <span class="hljs-string">""</span>)
+
+    <span class="hljs-keyword">return</span> cleanInput
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Admin command validation</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isPlayerAdmin</span><span class="hljs-params">(player)</span></span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> isValidPlayer(player) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">local</span> account = getPlayerAccount(player)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> account <span class="hljs-keyword">or</span> isGuestAccount(account) <span class="hljs-keyword">then</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span> <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">local</span> accountName = getAccountName(account)
+    <span class="hljs-keyword">return</span> isObjectInACLGroup(<span class="hljs-string">"user."</span> .. accountName, aclGetGroup(<span class="hljs-string">"Admin"</span>))
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="error-handling-">Error Handling:</h4>
+<p><strong>Comprehensive Error Handling:</strong></p>
+<pre><code class="lang-lua"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">safeFunctionCall</span><span class="hljs-params">(func, ...)</span></span>
+    <span class="hljs-keyword">local</span> results = {<span class="hljs-built_in">pcall</span>(func, ...)}
+
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> results[<span class="hljs-number">1</span>] <span class="hljs-keyword">then</span>
+        <span class="hljs-keyword">local</span> errorMsg = results[<span class="hljs-number">2</span>] <span class="hljs-keyword">or</span> <span class="hljs-string">"Unknown error"</span>
+        outputDebugString(<span class="hljs-string">"Function error: "</span> .. errorMsg, <span class="hljs-number">1</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>, errorMsg
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">unpack</span>(results, <span class="hljs-number">2</span>)
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">-- Usage</span>
+<span class="hljs-keyword">local</span> success, result = safeFunctionCall(riskyOperation, param1, param2)
+<span class="hljs-keyword">if</span> success <span class="hljs-keyword">then</span>
+    <span class="hljs-comment">-- Process result</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-comment">-- Handle error</span>
+    outputChatBox(<span class="hljs-string">"Operation failed: "</span> .. result, player, <span class="hljs-number">255</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="documentation-">Documentation:</h4>
+<p><strong>Code Documentation:</strong></p>
+<pre><code class="lang-lua">-<span class="ruby">-- Player money management system
+</span>-<span class="ruby">- @module player_money
+</span>-<span class="ruby">- @author Omindu Dissanayaka
+</span>-<span class="ruby">- @license MIT
+</span>
+-<span class="ruby">-- Adds money to player<span class="hljs-string">'s account
+</span></span>-<span class="ruby"><span class="hljs-string">- @function addPlayerMoney
+</span></span>-<span class="ruby"><span class="hljs-string">- @param player userdata The player element
+</span></span>-<span class="ruby"><span class="hljs-string">- @param amount number The amount to add
+</span></span>-<span class="ruby"><span class="hljs-string">- @return boolean True if successful, false otherwise
+</span></span>-<span class="ruby"><span class="hljs-string">- @usage addPlayerMoney(player, 1000)
+</span></span>function addPlayerMoney(player, amount)
+    -<span class="ruby"><span class="hljs-string">- Function implementation
+</span></span>end
+</code></pre>
+<hr>
+<h2 id="-">🎉 සාරාංශය</h2>
+<p>මෙම මාර්ගෝපදේශය ඔබට Lua programming සහ MTA:SA resource development හි සම්පූර්ණ පදනම ලබා දෙනු ඇත. මතක තබා ගන්න:</p>
+<h3 id="-">🔑 ප්‍රධාන කරුණු:</h3>
+<ol>
+<li><strong>Lua basics</strong> හොඳින් ඉගෙන ගන්න</li>
+<li><strong>MTA events</strong> සහ <strong>element system</strong> භාවිතය හැසිරවීම ඉගෙන ගන්න</li>
+<li><strong>Server-client communication</strong> හරිහැටි තේරුම් ගන්න</li>
+<li><strong>Database integration</strong> සහ <strong>data management</strong> හොඳින් කරන්න</li>
+<li><strong>Code organization</strong> සහ <strong>best practices</strong> අනුගමනය කරන්න</li>
+</ol>
+<h3 id="-">🚀 ඊළඟ පියවර:</h3>
+<ol>
+<li>සරල resources සිට පටන් ගන්න</li>
+<li>ක්‍රමයෙන් complex features add කරන්න</li>
+<li>MTA wiki සහ community forums භාවිතා කරන්න</li>
+<li>දෝෂ නිරාකරණය කිරීම ඉගෙන ගන්න</li>
+<li>අන් අයගේ code අධ්‍යයනය කරන්න</li>
+</ol>
+<h3 id="-resources-">📚 අමතර resources:</h3>
+<ul>
+<li><a href="https://wiki.multitheftauto.com/">MTA Wiki</a></li>
+<li><a href="https://www.lua.org/manual/5.1/">Lua Documentation</a></li>
+<li><a href="https://forum.mtasa.com/">MTA Forums</a></li>
+</ul>
+<p><strong>සාදරයෙන් පිළිගනිමු MTA:SA development community එකට!</strong> 🎮</p>
+<p>මෙම මාර්ගෝපදේශය ඔබගේ development ගමන ආරම්භ කිරීමට උපකාරී වනු ඇතැයි අපි විශ්වාස කරමු. කේතනය කිරීමේ අභියෝගාත්මක සහ රසවත් ලෝකය භුක්ති විඳින්න! ✨</p>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    hljs.highlightAll();
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/lua.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/php.min.js"></script>
+
+</body>
+</html>
