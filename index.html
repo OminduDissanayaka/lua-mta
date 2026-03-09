@@ -63,8 +63,8 @@
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
-      padding: 0 28px;
-      gap: 16px;
+      padding: 0 20px 0 20px;
+      gap: 12px;
       z-index: 100;
     }
 
@@ -96,6 +96,7 @@
     .header-badge {
       margin-left: auto;
       display: flex; align-items: center; gap: 8px;
+      flex-shrink: 0;
     }
 
     .badge {
@@ -571,15 +572,24 @@
       background: var(--code-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 20px 22px;
       margin: 16px 0 24px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 12.5px;
       line-height: 2;
       color: var(--text-secondary);
       overflow-x: auto;
-      white-space: pre;
-      display: block;
+    }
+
+    .folder-tree pre {
+      margin: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      padding: 20px 22px !important;
+      white-space: pre !important;
+      overflow: visible !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 12.5px !important;
+      line-height: 2 !important;
     }
 
     .folder-tree .folder { color: var(--accent-yellow); }
@@ -839,6 +849,7 @@
       cursor: pointer;
       flex-shrink: 0;
       transition: all 0.18s;
+      margin-left: 8px;
     }
 
     .mobile-menu-btn:hover {
@@ -882,21 +893,26 @@
       }
 
       .main-content { margin-left: 0; padding: 32px 28px 60px; }
+
+      .header-badge { display: none; }
     }
 
     @media (max-width: 640px) {
-      .main-content { padding: 24px 16px 48px; }
+      .main-content { padding: 20px 14px 48px; }
       .feature-grid { grid-template-columns: 1fr; }
       .concept-row { grid-template-columns: 1fr; }
       .summary-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 24px; }
+      .hero h1 { font-size: 22px; }
       .hero-stats { gap: 14px; }
-      .summary-section { padding: 24px 20px; }
-      .author-note { padding: 20px; }
+      .hero-stats .stat-text { font-size: 12px; }
+      .summary-section { padding: 22px 18px; }
+      .author-note { padding: 18px; }
       .author-note-inner { flex-direction: column; gap: 14px; }
-      .header-badge { display: none; }
-      pre code { font-size: 12px !important; padding: 16px !important; }
-      .folder-tree { font-size: 11px; }
+      pre code { font-size: 12px !important; padding: 14px 14px !important; }
+      .folder-tree pre { font-size: 11px !important; padding: 14px 14px !important; }
+      .code-header { padding: 8px 12px; }
+      .section-header { flex-direction: column; gap: 8px; }
+      .hero { padding: 32px 0 40px; }
     }
 
     /* ─── ANIMATIONS ─── */
@@ -924,13 +940,13 @@
     </div>
     <span class="header-title">USEC<span> Guru</span></span>
   </a>
-  <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
-    <svg id="menuIcon" viewBox="0 0 24 24" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-  </button>
   <div class="header-badge">
     <span class="badge badge-lua">Lua 5.1</span>
     <span class="badge badge-mta">MTA:SA</span>
   </div>
+  <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle menu">
+    <svg id="menuIcon" viewBox="0 0 24 24" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </header>
 
 <!-- ─── LAYOUT ─── -->
@@ -1787,8 +1803,7 @@ print(divide(10, 2))  -- Output: 5
       </div>
 
       <h4>Resource Folder Structure</h4>
-      <div class="folder-tree">
-<span class="folder">myresource/</span>
+      <div class="folder-tree"><pre><span class="folder">myresource/</span>
 │
 ├── <span class="file-xml">meta.xml</span>          <span class="comment">(Resource configuration file)</span>
 ├── <span class="file-lua">server.lua</span>        <span class="comment">(Server-side script)</span>
@@ -1802,8 +1817,7 @@ print(divide(10, 2))  -- Output: 5
 │   └── <span class="file-media">notification.mp3</span>
 │
 └── <span class="folder">data/</span>
-    └── <span class="file-lua">config.lua</span>
-      </div>
+    └── <span class="file-lua">config.lua</span></pre></div>
 
       <h4>මූලික meta.xml</h4>
       <div class="code-wrapper">
@@ -2767,8 +2781,7 @@ setTimer(cleanupUnusedElements, 60000, 0)  -- 1 minute</code></pre>
       </div>
 
       <h4>Modular Folder Structure</h4>
-      <div class="folder-tree">
-<span class="folder">resources/</span>
+      <div class="folder-tree"><pre><span class="folder">resources/</span>
 └── <span class="folder">mygamemode/</span>
     ├── <span class="file-xml">meta.xml</span>
     ├── <span class="file-lua">main.lua</span>
@@ -2796,8 +2809,7 @@ setTimer(cleanupUnusedElements, 60000, 0)  -- 1 minute</code></pre>
     │       └── <span class="file-lua">effects.lua</span>
     └── <span class="folder">shared/</span>
         ├── <span class="file-lua">utils.lua</span>
-        └── <span class="file-lua">constants.lua</span>
-      </div>
+        └── <span class="file-lua">constants.lua</span></pre></div>
 
       <h4>Input Validation</h4>
       <div class="code-wrapper">
